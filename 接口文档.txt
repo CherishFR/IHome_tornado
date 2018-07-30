@@ -1,0 +1,10 @@
+1.图片验证码：
+描述：用来生成图片验证码
+url:/api/imagecode?codeid=123&pcodeid=
+method:get
+传入参数：
+名称          类型          说明
+codeid       int         验证码编号
+pcodeid      int         前一个验证码编号
+返回值：
+图片二进制数据
