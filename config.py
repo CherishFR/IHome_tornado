@@ -3,7 +3,7 @@ import os
 
 # Application配置参数
 setting = {
-    "static_path": os.path.join(os.path.dirname(__file__), "statics"),
+    "static_path": os.path.join(os.path.dirname(__file__), "static"),
     "template_path": os.path.join(os.path.dirname(__file__), "template"),
     "cookie_secret":"rrqUEK3hSgCnknxltqspZXTS2Yu0LEsXr3anyxzG1Mo=",
     "xsrf_cookies":True,
@@ -27,3 +27,6 @@ redis_options = dict(
 # log
 log_path = os.path.join(os.path.dirname(__file__), "logs/log")
 log_level = "debug"
+
+# session数据有效期， 单位秒
+session_expires = 86400

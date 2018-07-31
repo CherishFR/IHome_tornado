@@ -1,5 +1,5 @@
 # coding:utf_8
-from BaseHandler import BaseHandler
+from .BaseHandler import BaseHandler
 import logging
 
 class IndexHandler(BaseHandler):

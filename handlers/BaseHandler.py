@@ -1,5 +1,8 @@
 # coding:utf_8
 from tornado.web import RequestHandler
+import tornado.web
+import json
+from utils.session import Session
 
 class BaseHandler(RequestHandler):
     """ handler基类 """
@@ -12,7 +15,11 @@ class BaseHandler(RequestHandler):
         return self.application.redis
 
     def prepare(self):
-        pass
+        self.xsrf_token
+        if self.request.headers.get("Content-Type","").startswith("application/json"):
+            self.json_args = json.loads(self.request.body)
+        else:
+            self.json_args = None
 
     def write_error(self, status_code, **kwargs):
         pass
@@ -25,3 +32,13 @@ class BaseHandler(RequestHandler):
 
     def on_finish(self):
         pass
+
+    def get_current_user(self):
+        self.session = Session(self)
+        return self.session.data
+
+class StaticFileHandler(tornado.web.StaticFileHandler):
+    """"""
+    def __init__(self,*args,**kwargs):
+        super(StaticFileHandler,self).__init__(*args,**kwargs)
+        self.xsrf_token
