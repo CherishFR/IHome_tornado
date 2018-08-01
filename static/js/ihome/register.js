@@ -171,7 +171,7 @@ $(document).ready(function() {
             },
             success: function (data) {
                 if ("0" == data.errcode) {
-                    location.href = "/";
+                    location.href = "/login.html";
                 } else if ("验证码过期" == data.errmsg || "验证码错误" == data.errmsg) {
                     $("#phone-code-err>span").html(data.errmsg);
                     $("#phone-code-err").show();

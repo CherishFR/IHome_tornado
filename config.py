@@ -30,3 +30,9 @@ log_level = "debug"
 
 # session数据有效期， 单位秒
 session_expires = 86400
+
+# 密码加密密钥
+passwd_hash_key = "nlgCjaTXQX2jpupQFQLoQo5N4OkEmkeHsHD9+BBx2WQ="
+
+# 上传头像URL前缀
+image_url_prefix = "http://ihome.com/"

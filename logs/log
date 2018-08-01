@@ -1,3 +1,178 @@
 [W 180731 17:39:54 web:2162] 405 GET /api/phonecode (127.0.0.1) 0.79ms
 [W 180731 20:30:40 web:2162] 404 GET /api/check_login (127.0.0.1) 135.79ms
 [W 180731 20:30:40 web:2162] 404 GET /api/house/index (127.0.0.1) 1.10ms
+[W 180801 11:24:25 web:2162] 404 GET /api/check_login (127.0.0.1) 52.94ms
+[W 180801 11:24:25 web:2162] 404 GET /api/house/index (127.0.0.1) 1.02ms
+[W 180801 11:24:29 web:2162] 404 GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map (127.0.0.1) 1.31ms
+[W 180801 11:26:59 web:2162] 405 POST /api/register (127.0.0.1) 0.65ms
+[E 180801 11:55:28 session:34] 'Session' object has no attribute 'redis'
+[E 180801 11:55:28 Passport:62] save session failed
+[W 180801 11:55:28 web:2162] 404 GET /api/check_login (127.0.0.1) 1.72ms
+[W 180801 11:55:28 web:2162] 404 GET /api/house/index (127.0.0.1) 0.97ms
+[W 180801 11:55:28 web:2162] 404 GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map (127.0.0.1) 0.81ms
+[W 180801 11:56:11 web:2162] 404 GET /login (127.0.0.1) 0.73ms
+[E 180801 11:56:32 web:1670] Uncaught exception POST /api/login (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/api/login', version='HTTP/1.1', remote_ip='127.0.0.1')
+    Traceback (most recent call last):
+      File "/home/liu/.local/lib/python2.7/site-packages/tornado/web.py", line 1590, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/liu/gitsub/IHome_Tornado/handlers/Passport.py", line 68, in post
+        mobile = self.json_args("mobile")
+    TypeError: 'dict' object is not callable
+[E 180801 11:56:32 web:2162] 500 POST /api/login (127.0.0.1) 1.15ms
+[E 180801 11:57:12 web:1670] Uncaught exception POST /api/login (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/api/login', version='HTTP/1.1', remote_ip='127.0.0.1')
+    Traceback (most recent call last):
+      File "/home/liu/.local/lib/python2.7/site-packages/tornado/web.py", line 1590, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/liu/gitsub/IHome_Tornado/handlers/Passport.py", line 68, in post
+        mobile = self.json_args("mobile")
+    TypeError: 'dict' object is not callable
+[E 180801 11:57:12 web:2162] 500 POST /api/login (127.0.0.1) 2.35ms
+[E 180801 11:57:56 web:1670] Uncaught exception POST /api/login (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/api/login', version='HTTP/1.1', remote_ip='127.0.0.1')
+    Traceback (most recent call last):
+      File "/home/liu/.local/lib/python2.7/site-packages/tornado/web.py", line 1590, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/liu/gitsub/IHome_Tornado/handlers/Passport.py", line 68, in post
+        mobile = self.json_args("mobile")
+    TypeError: 'dict' object is not callable
+[E 180801 11:57:56 web:2162] 500 POST /api/login (127.0.0.1) 1.99ms
+[E 180801 11:59:06 web:1670] Uncaught exception POST /api/login (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/api/login', version='HTTP/1.1', remote_ip='127.0.0.1')
+    Traceback (most recent call last):
+      File "/home/liu/.local/lib/python2.7/site-packages/tornado/web.py", line 1590, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/liu/gitsub/IHome_Tornado/handlers/Passport.py", line 68, in post
+        mobile = self.json_args("mobile")
+    TypeError: 'dict' object is not callable
+[E 180801 11:59:06 web:2162] 500 POST /api/login (127.0.0.1) 0.98ms
+[E 180801 12:13:26 web:1670] Uncaught exception POST /api/login (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/api/login', version='HTTP/1.1', remote_ip='127.0.0.1')
+    Traceback (most recent call last):
+      File "/home/liu/.local/lib/python2.7/site-packages/tornado/web.py", line 1590, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/liu/gitsub/IHome_Tornado/handlers/Passport.py", line 65, in post
+        mobile = self.json_args("mobile")
+    TypeError: 'dict' object is not callable
+[E 180801 12:13:26 web:2162] 500 POST /api/login (127.0.0.1) 1.60ms
+[E 180801 12:34:01 session:34] 'Session' object has no attribute 'redis'
+[E 180801 12:34:01 Passport:89] save session failed
+[W 180801 12:34:01 web:2162] 404 GET /api/check_login (127.0.0.1) 2.85ms
+[W 180801 12:34:01 web:2162] 404 GET /api/house/index (127.0.0.1) 1.67ms
+[W 180801 12:34:01 web:2162] 404 GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map (127.0.0.1) 1.82ms
+[W 180801 18:14:41 web:2162] 404 GET /api/house/index (127.0.0.1) 2.25ms
+[E 180801 18:14:58 session:34] 'Session' object has no attribute 'redis'
+[E 180801 18:14:58 Passport:89] save session failed
+[W 180801 18:14:58 web:2162] 404 GET /api/house/index (127.0.0.1) 0.73ms
+[W 180801 18:15:33 web:2162] 404 GET /api/house/index (127.0.0.1) 0.79ms
+[E 180801 18:26:06 session:34] 'Session' object has no attribute 'redis'
+[E 180801 18:26:06 Passport:89] save session failed
+[W 180801 18:26:06 web:2162] 404 GET /api/house/index (127.0.0.1) 1.57ms
+[W 180801 18:35:25 web:2162] 404 GET /api/house/index (127.0.0.1) 1.94ms
+[E 180801 18:35:37 session:34] 'Session' object has no attribute 'redis'
+[E 180801 18:35:37 Passport:89] save session failed
+[W 180801 18:35:37 web:2162] 404 GET /api/house/index (127.0.0.1) 0.84ms
+[E 180801 18:37:25 session:34] 'Session' object has no attribute 'redis'
+[E 180801 18:37:25 Passport:89] save session failed
+[E 180801 18:37:27 session:34] 'Session' object has no attribute 'redis'
+[E 180801 18:37:27 Passport:89] save session failed
+[W 180801 18:38:23 web:2162] 404 GET /api/house/index (127.0.0.1) 0.62ms
+[E 180801 18:38:37 session:34] 'Session' object has no attribute 'redis'
+[E 180801 18:38:37 Passport:89] save session failed
+[E 180801 18:38:38 session:34] 'Session' object has no attribute 'redis'
+[E 180801 18:38:38 Passport:89] save session failed
+[E 180801 18:38:39 session:34] 'Session' object has no attribute 'redis'
+[E 180801 18:38:39 Passport:89] save session failed
+[E 180801 18:38:39 session:34] 'Session' object has no attribute 'redis'
+[E 180801 18:38:39 Passport:89] save session failed
+[E 180801 18:38:39 session:34] 'Session' object has no attribute 'redis'
+[E 180801 18:38:39 Passport:89] save session failed
+[E 180801 18:38:39 session:34] 'Session' object has no attribute 'redis'
+[E 180801 18:38:39 Passport:89] save session failed
+[E 180801 18:38:39 session:34] 'Session' object has no attribute 'redis'
+[E 180801 18:38:39 Passport:89] save session failed
+[E 180801 18:38:39 session:34] 'Session' object has no attribute 'redis'
+[E 180801 18:38:39 Passport:89] save session failed
+[E 180801 18:38:39 session:34] 'Session' object has no attribute 'redis'
+[E 180801 18:38:39 Passport:89] save session failed
+[E 180801 18:38:39 session:34] 'Session' object has no attribute 'redis'
+[E 180801 18:38:39 Passport:89] save session failed
+[E 180801 18:38:40 session:34] 'Session' object has no attribute 'redis'
+[E 180801 18:38:40 Passport:89] save session failed
+[E 180801 18:38:40 session:34] 'Session' object has no attribute 'redis'
+[E 180801 18:38:40 Passport:89] save session failed
+[E 180801 18:38:41 session:34] 'Session' object has no attribute 'redis'
+[E 180801 18:38:41 Passport:89] save session failed
+[E 180801 18:38:42 session:34] 'Session' object has no attribute 'redis'
+[E 180801 18:38:42 Passport:89] save session failed
+[E 180801 18:38:42 session:34] 'Session' object has no attribute 'redis'
+[E 180801 18:38:42 Passport:89] save session failed
+[E 180801 18:38:42 session:34] 'Session' object has no attribute 'redis'
+[E 180801 18:38:42 Passport:89] save session failed
+[E 180801 18:39:39 session:34] 'Session' object has no attribute 'redis'
+[E 180801 18:39:39 Passport:89] save session failed
+[E 180801 18:39:40 session:34] 'Session' object has no attribute 'redis'
+[E 180801 18:39:40 Passport:89] save session failed
+[E 180801 18:39:40 session:34] 'Session' object has no attribute 'redis'
+[E 180801 18:39:40 Passport:89] save session failed
+[W 180801 18:39:43 web:2162] 404 GET /api/house/index (127.0.0.1) 0.95ms
+[E 180801 18:39:50 session:34] 'Session' object has no attribute 'redis'
+[E 180801 18:39:50 Passport:89] save session failed
+[E 180801 18:39:51 session:34] 'Session' object has no attribute 'redis'
+[E 180801 18:39:51 Passport:89] save session failed
+[E 180801 18:39:51 session:34] 'Session' object has no attribute 'redis'
+[E 180801 18:39:51 Passport:89] save session failed
+[E 180801 18:39:52 session:34] 'Session' object has no attribute 'redis'
+[E 180801 18:39:52 Passport:89] save session failed
+[E 180801 18:39:52 session:34] 'Session' object has no attribute 'redis'
+[E 180801 18:39:52 Passport:89] save session failed
+[E 180801 18:40:34 session:34] 'Session' object has no attribute 'redis'
+[E 180801 18:40:34 Passport:89] save session failed
+[W 180801 18:40:34 web:2162] 404 GET /api/house/index (127.0.0.1) 1.70ms
+[E 180801 18:40:46 session:34] 'Session' object has no attribute 'redis'
+[E 180801 18:40:46 Passport:89] save session failed
+[W 180801 18:40:46 web:2162] 404 GET /api/house/index (127.0.0.1) 0.70ms
+[E 180801 18:42:37 session:34] 'Session' object has no attribute 'redis'
+[E 180801 18:42:37 Passport:89] save session failed
+[W 180801 18:42:37 web:2162] 404 GET /api/house/index (127.0.0.1) 1.75ms
+[W 180801 18:43:09 web:2162] 404 GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map (127.0.0.1) 0.67ms
+[W 180801 18:45:29 web:2162] 404 GET /api/house/index (127.0.0.1) 1.69ms
+[E 180801 18:52:07 session:34] 'Session' object has no attribute 'redis'
+[E 180801 18:52:07 Passport:88] save session failed
+[W 180801 18:52:07 web:2162] 404 GET /api/house/index (127.0.0.1) 1.31ms
+[E 180801 18:53:48 session:34] 'Session' object has no attribute 'redis'
+[E 180801 18:53:48 Passport:86] save session failed
+[E 180801 18:53:48 session:34] 'Session' object has no attribute 'redis'
+[E 180801 18:53:48 Passport:86] save session failed
+[E 180801 18:53:49 session:34] 'Session' object has no attribute 'redis'
+[E 180801 18:53:49 Passport:86] save session failed
+[E 180801 18:53:49 session:34] 'Session' object has no attribute 'redis'
+[E 180801 18:53:49 Passport:86] save session failed
+[E 180801 18:53:49 session:34] 'Session' object has no attribute 'redis'
+[E 180801 18:53:49 Passport:86] save session failed
+[E 180801 18:53:49 session:34] 'Session' object has no attribute 'redis'
+[E 180801 18:53:49 Passport:86] save session failed
+[E 180801 18:53:49 session:34] 'Session' object has no attribute 'redis'
+[E 180801 18:53:49 Passport:86] save session failed
+[E 180801 18:53:49 session:34] 'Session' object has no attribute 'redis'
+[E 180801 18:53:49 Passport:86] save session failed
+[E 180801 18:53:49 session:34] 'Session' object has no attribute 'redis'
+[E 180801 18:53:49 Passport:86] save session failed
+[E 180801 18:53:50 session:34] 'Session' object has no attribute 'redis'
+[E 180801 18:53:50 Passport:86] save session failed
+[E 180801 18:53:50 session:34] 'Session' object has no attribute 'redis'
+[E 180801 18:53:50 Passport:86] save session failed
+[E 180801 18:53:50 session:34] 'Session' object has no attribute 'redis'
+[E 180801 18:53:50 Passport:86] save session failed
+[E 180801 18:53:50 session:34] 'Session' object has no attribute 'redis'
+[E 180801 18:53:50 Passport:86] save session failed
+[E 180801 18:54:21 session:35] 'Session' object has no attribute 'redis'
+[E 180801 18:54:21 Passport:86] save session failed
+[E 180801 18:54:21 session:35] 'Session' object has no attribute 'redis'
+[E 180801 18:54:21 Passport:86] save session failed
+[E 180801 18:54:21 session:35] 'Session' object has no attribute 'redis'
+[E 180801 18:54:21 Passport:86] save session failed
+[E 180801 18:54:21 session:35] 'Session' object has no attribute 'redis'
+[E 180801 18:54:21 Passport:86] save session failed
+[W 180801 19:00:30 web:2162] 404 GET /api/house/index (127.0.0.1) 2.71ms

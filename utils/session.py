@@ -3,6 +3,7 @@ import uuid
 import logging
 import json
 import config
+import redis
 
 
 class Session(object):
@@ -17,7 +18,7 @@ class Session(object):
         else:
             # 拿到session_id,去redis中取数据
             try:
-                data = self.redis.get("sess_%s" % self.session_id)
+                data = self.request_handler.redis.get("sess_%s" % self.session_id)
             except Exception as e:
                 logging.error(e)
                 self.data = {}
@@ -29,7 +30,7 @@ class Session(object):
     def save(self):
         json_data = json.dumps(self.data)
         try:
-            self.redis.setex("sess_%s" % self.session_id,config.session_expires,json_data)
+            self.request_handler.redis.setex("sess_%s" % self.session_id,config.session_expires,json_data)
         except Exception as e:
             logging.error(e)
             raise Exception("save session failed")
@@ -39,6 +40,6 @@ class Session(object):
     def clear(self):
         self.request_handler.clear_cookie("session_id")
         try:
-            self.redis.delete("sess_%s" % self.session_id)
+            self.request_handler.redis.delete("sess_%s" % self.session_id)
         except Exception as e:
             logging.error(e)
