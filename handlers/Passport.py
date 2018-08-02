@@ -2,6 +2,7 @@
 from .BaseHandler import BaseHandler
 from utils.response_code import RET
 from utils.session import Session
+from utils.common import require_logined
 import logging
 import re
 import hashlib
@@ -92,9 +93,18 @@ class LoginHandler(BaseHandler):
 
 
 class CheckLoginHandler(BaseHandler):
+    """登陆状态检测"""
     def get(self):
-        print(self.get_current_user())
         if self.get_current_user():
             self.write(dict(errno=RET.OK, errmsg="true", data={"name":self.session.data.get("name")}))
         else:
             self.write(dict(errno=RET.NODATA, errmsg="没有用户信息"))
+
+class LogoutHandler(BaseHandler):
+    """退出登录"""
+    @require_logined
+    def get(self):
+        # 清除session数据
+        # sesssion = Session(self)
+        self.session.clear()
+        self.write(dict(errno=RET.OK, errmsg="退出成功"))

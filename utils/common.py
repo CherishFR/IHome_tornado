@@ -3,6 +3,8 @@ from utils.response_code import RET
 import functools
 
 def require_logined(func):
+    """装饰器，检测登陆状态"""
+    # 保证被装饰的函数对象的__name__不变
     @functools.wraps(func)
     def inner(request_handler_obj,*args,**kwargs):
         # 根据get_current_user()方法进行判断，如果返回的不是一个空字典，证明用户已经登陆过，保存了用户session数据。

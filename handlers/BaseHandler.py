@@ -25,7 +25,7 @@ class BaseHandler(RequestHandler):
         pass
 
     def set_default_headers(self):
-        pass
+        self.set_header("Content-Type","application/json; charset=UTF-8")
 
     def initialize(self):
         pass
