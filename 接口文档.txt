@@ -23,3 +23,7 @@ method:post
     'errno':0
     'errmsg':'ok'
     }
+
+3.发布新房源：
+mothod：post
+传入参数：

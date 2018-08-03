@@ -40,7 +40,7 @@ class AreaInfoHandler(BaseHandler):
 
 
 class MyHousesHandler(BaseHandler):
-    """"""
+    """新建房屋信息"""
     @require_logined
     def get(self):
         user_id = self.session.data["user_id"]
@@ -63,3 +63,64 @@ class MyHousesHandler(BaseHandler):
                 }
                 houses.append(house)
         self.write(dict(errno= RET.OK, errmsg="OK", houses=houses))
+
+
+class HouseInfoHandler(BaseHandler):
+    """"""
+    def get(self):
+        pass
+    def post(self):
+        """保存"""
+        user_id = self.session.data.get("user_id")
+        title = self.json_args.get("title")
+        price = self.json_args.get("price")
+        area_id = self.json_args.get("area_id")
+        address = self.json_args.get("address")
+        room_count = self.json_args.get("room_count")
+        acreage = self.json_args.get("acreage")
+        unit = self.json_args.get("unit")
+        capacity = self.json_args.get("capacity")
+        beds = self.json_args.get("beds")
+        deposit = self.json_args.get("deposit")
+        min_days = self.json_args.get("min_days")
+        max_days = self.json_args.get("max_days")
+        facility = self.json_args.get("facility")
+        if not all((title, price, area_id, address, room_count, acreage, unit, capacity, beds, deposit, min_days,
+                    max_days)):
+            return self.write(dict(errno = RET.PARAMERR ,errmsg="缺少必要参数"))
+        try:
+            price = int(price) * 100
+            deposit = int(deposit) * 100
+        except Exception as e:
+            return self.write(dict(errno=RET.PARAMERR, errmsg="参数错误"))
+        try:
+            sql = "insert into ih_house_info(hi_user_id,hi_title,hi_price,hi_area_id,hi_address,hi_room_count," \
+                  "hi_acreage,hi_house_unit,hi_capacity,hi_beds,hi_deposit,hi_min_days,hi_max_days) " \
+                  "values(%(user_id)s,%(title)s,%(price)s,%(area_id)s,%(address)s,%(room_count)s,%(acreage)s," \
+                  "%(house_unit)s,%(capacity)s,%(beds)s,%(deposit)s,%(min_days)s,%(max_days)s)"
+            house_id = self.db.execute(sql, user_id=user_id, title=title, price=price, area_id=area_id, address=address,
+                                       room_count=room_count, acreage=acreage, house_unit=unit, capacity=capacity,
+                                       beds=beds, deposit=deposit, min_days=min_days, max_days=max_days)
+        except Exception as e:
+            logging.error(e)
+            return self.write(dict(errno=RET.DBERR, errmsg="save data error"))
+        try:
+            sql = "insert into ih_house_facility(hf_house_id,hf_facility_id) values"
+            sql_val = []
+            vals = []
+            for i in facility:
+                sql_val.append("(%s,%s)")
+                vals.append(house_id)
+                vals.append(i)
+            sql = sql + ",".join(sql_val)
+            self.db.execute(sql,*tuple(vals))
+        except Exception as e:
+            logging.error(e)
+            try:
+                self.db.execute("delete from ih_house_info where hi_house_id=%s",house_id)
+            except Exception as e:
+                logging.error(e)
+                return self.write(dict(errno=RET.DBERR, errmsg="delete fail"))
+            else:
+                return self.write(dict(errno=RET.DBERR, errmsg="delete fail"))
+        self.write(dict(errno=RET.OK, errmsg="OK", house_id=house_id))
