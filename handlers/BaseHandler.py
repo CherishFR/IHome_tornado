@@ -1,11 +1,11 @@
-# coding:utf_8
+# coding:utf-8
 from tornado.web import RequestHandler
 import tornado.web
 import json
 from utils.session import Session
 
 class BaseHandler(RequestHandler):
-    """ handler基类 """
+    """handler基类"""
     @property
     def db(self):
         return self.application.db
