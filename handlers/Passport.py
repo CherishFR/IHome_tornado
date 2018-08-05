@@ -9,15 +9,6 @@ import hashlib
 import config
 
 
-
-class IndexHandler(BaseHandler):
-    def get(self):
-        logging.debug("debug msg")
-        logging.info("info msg")
-        logging.warning("warning msg")
-        logging.error("error msg")
-        self.write("hello")
-
 class RegisterHandler(BaseHandler):
     """电话验证以及注册"""
     def post(self):
